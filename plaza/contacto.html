@@ -27,3 +27,156 @@ Ejercicio 08 · La letra
   - El mismo <link> de Google Fonts que en index.html.
 ============================================================
 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sabores de la Plaza · Contacto</title>
+
+  <!-- Ejercicio 08: la misma fuente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Ejercicio 01 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Ejercicio 02: la misma barra de navegación -->
+  <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Sabores de la Plaza</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
+              aria-expanded="false" aria-label="Mostrar menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="puestos.html">Puestos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <h1 class="text-center mb-4">Contacto y pedidos</h1>
+
+    <!-- Ejercicio 06: formulario centrado.
+         justify-content-center centra la columna; col-lg-6 la hace más angosta en pantalla grande -->
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-6">
+        <form>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+          </div>
+
+          <div class="mb-3">
+            <label for="correo" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="correo" placeholder="tucorreo@ejemplo.com">
+          </div>
+
+          <div class="mb-3">
+            <label for="puesto" class="form-label">Puesto</label>
+            <select class="form-select" id="puesto">
+              <option selected>Elige un puesto</option>
+              <option>Frutas de doña Marta</option>
+              <option>Panadería El Horno</option>
+              <option>Almuerzos Casa Vieja</option>
+              <option>Jugos La Cascada</option>
+              <option>Café del Mercado</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" rows="4" placeholder="Cuéntanos qué quieres pedir"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Enviar pedido</button>
+
+          <!-- Ejercicio 07: botón que abre el modal -->
+          <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalHorario">
+            Ver horario
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Ejercicio 07: preguntas frecuentes (acordeón) -->
+    <h2 class="text-center mt-5 mb-4">Preguntas frecuentes</h2>
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="accordion" id="preguntas">
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pregunta1" aria-expanded="true" aria-controls="pregunta1">
+                ¿Hacen domicilios?
+              </button>
+            </h3>
+            <div id="pregunta1" class="accordion-collapse collapse show" data-bs-parent="#preguntas">
+              <div class="accordion-body">Sí, hacemos domicilios en el barrio para pedidos hechos antes de las 11:00 a.m.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pregunta2" aria-expanded="false" aria-controls="pregunta2">
+                ¿Cómo puedo pagar?
+              </button>
+            </h3>
+            <div id="pregunta2" class="accordion-collapse collapse" data-bs-parent="#preguntas">
+              <div class="accordion-body">Aceptamos efectivo y transferencias.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pregunta3" aria-expanded="false" aria-controls="pregunta3">
+                ¿Puedo encargar para un evento?
+              </button>
+            </h3>
+            <div id="pregunta3" class="accordion-collapse collapse" data-bs-parent="#preguntas">
+              <div class="accordion-body">Claro. Escríbenos con unos días de anticipación y te armamos el pedido.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Ejercicio 07: modal con el horario -->
+  <div class="modal fade" id="modalHorario" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="tituloModal">Horario de la plaza</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-1">Lunes a sábado: 6:00 a.m. a 3:00 p.m.</p>
+          <p class="mb-0">Domingos y festivos: 6:00 a.m. a 1:00 p.m.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">Sabores de la Plaza · Teléfono: 300 000 0000 · hola@saboresdelaplaza.co</p>
+  </footer>
+
+  <!-- Ejercicio 01 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

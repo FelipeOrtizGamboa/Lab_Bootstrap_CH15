@@ -28,3 +28,161 @@ Ejercicio 08 · La letra
   - El mismo <link> de Google Fonts que en index.html.
 ============================================================
 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sabores de la Plaza · Puestos</title>
+
+  <!-- Ejercicio 08: la misma fuente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Ejercicio 01 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Ejercicio 02: la misma barra de navegación -->
+  <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Sabores de la Plaza</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
+              aria-expanded="false" aria-label="Mostrar menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="puestos.html">Puestos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <h1 class="mb-4">Nuestros puestos</h1>
+
+    <!-- Ejercicio 04: lateral (3 columnas) + contenido (9 columnas) = 12 -->
+    <div class="row">
+
+      <!-- Lateral con las 5 categorías -->
+      <aside class="col-12 col-lg-3 mb-4">
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action active">Frutas</a>
+          <a href="#" class="list-group-item list-group-item-action">Panadería</a>
+          <a href="#" class="list-group-item list-group-item-action">Almuerzos</a>
+          <a href="#" class="list-group-item list-group-item-action">Jugos</a>
+          <a href="#" class="list-group-item list-group-item-action">Café</a>
+        </div>
+      </aside>
+
+      <!-- Contenido con las tarjetas.
+           col-12 = 1 tarjeta por fila en celular, col-md-6 = 2 en tablet, col-xl-4 = 3 en computador -->
+      <section class="col-12 col-lg-9">
+        <div class="row g-4">
+
+          <div class="col-12 col-md-6 col-xl-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h2 class="card-title h5">Frutas de doña Marta <span class="badge text-bg-success">Nuevo</span></h2>
+                <p class="card-text">Mango, papaya, piña y fresas recién llegadas del campo.</p>
+                <a href="contacto.html" class="btn btn-primary">Hacer pedido</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h2 class="card-title h5">Panadería El Horno <span class="badge text-bg-warning">Popular</span></h2>
+                <p class="card-text">Pan de yuca, almojábanas y pan campesino calientico.</p>
+                <a href="contacto.html" class="btn btn-primary">Hacer pedido</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h2 class="card-title h5">Almuerzos Casa Vieja</h2>
+                <p class="card-text">Menú del día con sopa, seco y jugo. Comida casera de todos los días.</p>
+                <a href="contacto.html" class="btn btn-primary">Hacer pedido</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h2 class="card-title h5">Jugos La Cascada <span class="badge text-bg-info">Sin conservantes</span></h2>
+                <p class="card-text">Jugos naturales de lulo, mora y maracuyá, hechos al momento.</p>
+                <a href="contacto.html" class="btn btn-primary">Hacer pedido</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h2 class="card-title h5">Café del Mercado <span class="badge text-bg-danger">Popular</span></h2>
+                <p class="card-text">Café de origen colombiano, tostado y molido en la plaza.</p>
+                <a href="contacto.html" class="btn btn-primary">Hacer pedido</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- Ejercicio 05: tabla de precios -->
+    <h2 class="mt-5 mb-3">Lista de precios</h2>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Puesto</th>
+            <th scope="col">Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mango (kilo)</td>
+            <td>Frutas de doña Marta</td>
+            <td>$4.500</td>
+          </tr>
+          <tr>
+            <td>Pan de yuca (unidad)</td>
+            <td>Panadería El Horno</td>
+            <td>$1.500</td>
+          </tr>
+          <tr>
+            <td>Almuerzo del día</td>
+            <td>Almuerzos Casa Vieja</td>
+            <td>$14.000</td>
+          </tr>
+          <tr>
+            <td>Jugo de lulo (vaso)</td>
+            <td>Jugos La Cascada</td>
+            <td>$5.000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">Sabores de la Plaza · Abierto todos los días de 6:00 a.m. a 3:00 p.m.</p>
+  </footer>
+
+  <!-- Ejercicio 01 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
